@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { State } from './variables';
+import Main from './components/Main';
+import GAME from './components/Game';
 import './App.css';
+import Apple from './components/Apple';
+
 
 function App() {
+  const [state, setState] = useState(State.MAIN);
+  const [score, setScore] = useState(0);
+  const [high_score, setHighScore] = useState(0);
+
+  const states = {
+    [State.MAIN]: <Main changeState={setState} high_score={high_score} score={score} />,
+    [State.GAME]: <GAME changeState={setState} setTotalScore={setScore} setHighScore={setHighScore} high_score={high_score} />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {states[state]}
     </div>
   );
 }

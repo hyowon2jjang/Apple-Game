@@ -1,0 +1,72 @@
+.apple_row {
+    display: flex;
+    flex-direction: row;
+}
+
+.apple {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    /* Smooth transition for size and color changes */
+}
+
+.apple.special {
+    width: 30px;
+    height: 30px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    color: black;
+}
+
+.apple.gone {
+    background-color: transparent;
+    color: transparent;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+}
+
+.time-bar-container {
+    width: 100%;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.time-bar {
+    height: 20px;
+    background-color: #4CAF50;
+    width: 100%;
+    /* Initial width */
+}
+
+.drag-overlay {
+    position: absolute;
+    background-color: rgba(255, 255, 0, 0.5);
+    /* Light yellow with some transparency */
+    border: 1px solid #666;
+    pointer-events: none;
+    /* Ensures that the overlay doesn't interfere with other mouse events */
+}
